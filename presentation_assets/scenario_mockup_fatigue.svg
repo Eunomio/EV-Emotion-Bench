@@ -1,93 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: $$$/GeneralStr/196=Adobe Illustrator 27.6.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 900" style="enable-background:new 0 0 1600 900;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#F7FAFF;}
-	.st1{enable-background:new    ;}
-	.st2{fill:#102A56;}
-	.st3{font-family:'AdobeSongStd-Light-GBpc-EUC-H';}
-	.st4{font-size:36px;}
-	.st5{font-family:'ArialMT';}
-	.st6{fill:#5A6A82;}
-	.st7{font-family:'MicrosoftYaHei';}
-	.st8{font-size:16px;}
-	.st9{fill:#FFFFFF;stroke:#C8D7EF;stroke-width:2;}
-	.st10{fill:#112233;}
-	.st11{font-size:20px;}
-	.st12{fill:#111827;stroke:#334155;stroke-width:2;}
-	.st13{fill:#2F3744;}
-	.st14{fill:none;stroke:#F8FAFC;stroke-width:5;stroke-dasharray:30,20;}
-	.st15{fill:#60A5FA;}
-	.st16{fill:#94A3B8;}
-	.st17{fill:#26364D;}
-	.st18{font-size:18px;}
-	.st19{fill:#EAF2FF;stroke:#ABC5EF;}
-	.st20{fill:#EAFAF0;stroke:#9BD0B1;}
-	.st21{fill:#ECFDF3;stroke:#89D5AA;stroke-width:2;}
-	.st22{font-size:12px;}
-	.st23{fill:#22C55E;}
-	.st24{fill:#FFFFFF;}
-	.st25{font-family:'MicrosoftYaHei-Bold';}
-	.st26{font-size:28px;}
-	.st27{fill:#FFF1F1;stroke:#F5A2A2;stroke-width:2;}
-	.st28{fill:#FFE4E6;stroke:#F5A2A2;}
-	.st29{fill:#EF4444;}
-</style>
-<rect class="st0" width="1600" height="900"/>
-<text transform="matrix(1 0 0 1 71.3281 86.7187)" class="st1"><tspan x="0" y="0" class="st2 st3 st4">使用场景</tspan><tspan x="144" y="0" class="st2 st5 st4">Mockup</tspan><tspan x="270.1" y="0" class="st2 st3 st4">：下班疲惫下的多轮高低分验证</tspan></text>
-<text transform="matrix(1 0 0 1 71.3281 120.7187)" class="st6 st7 st8">同一多轮对话历史下，比较低负荷陪伴回复与高认知负荷回复对用户下一轮反应和Judge评分的影响。</text>
-<rect x="70" y="170" class="st9" width="560" height="680"/>
-<text transform="matrix(1 0 0 1 105 215)" class="st10 st3 st11">车内对话场景</text>
-<rect x="105" y="245" class="st12" width="490" height="250"/>
-<path class="st13" d="M105,495l140-250h210l140,250H105z"/>
-<line class="st14" x1="350" y1="495" x2="350" y2="260"/>
-<circle class="st15" cx="265" cy="370" r="28"/>
-<path class="st16" d="M402.6,323h68c6.6,0,12,5.4,12,12v24c0,6.6-5.4,12-12,12h-68c-6.6,0-12-5.4-12-12v-24
-	C390.6,328.4,396,323,402.6,323z"/>
-<text transform="matrix(1 0 0 1 125 535)" class="st17 st7 st18">场景初始化</text>
-<text transform="matrix(1 0 0 1 130 566)" class="st6 st7 st8">风险等级：low</text>
-<text transform="matrix(1 0 0 1 130 594)" class="st6 st7 st8">驾驶负荷：low</text>
-<text transform="matrix(1 0 0 1 130 622)" class="st6 st7 st8">用户初始状态：疲惫 / medium</text>
-<text transform="matrix(1 0 0 1 130 650)" class="st6 st7 st8">披露意愿：low</text>
-<text transform="matrix(1 0 0 1 125 705)" class="st17 st7 st18">多轮对话历史</text>
-<rect x="125" y="725" class="st19" width="440" height="42"/>
-<text transform="matrix(1 0 0 1 145 752)" class="st6 st7 st8">U1：刚下班，脑子已经转不动了。</text>
-<rect x="125" y="773" class="st20" width="440" height="42"/>
-<text transform="matrix(1 0 0 1 145 800)" class="st6 st7 st8">R1：今天消耗挺大的，路上少想一点。</text>
-<rect x="675" y="170" class="st21" width="390" height="680"/>
-<text transform="matrix(1 0 0 1 710 215)" class="st10 st3 st22">高分回复路径</text>
-<text transform="matrix(1 0 0 1 710 260)" class="st17 st7 st18">用户当前轮</text>
-<rect x="710" y="280" class="st19" width="320" height="70"/>
-<text transform="matrix(1 0 0 1 730 323)" class="st6 st7 st8">一句话都不想多说。</text>
-<text transform="matrix(1 0 0 1 710 385)" class="st17 st7 st18">NOMI候选回复</text>
-<rect x="710" y="405" class="st20" width="320" height="95"/>
-<text transform="matrix(1 0 0 1 730 440)" class="st6 st7 st8">好，那我少说点。</text>
-<text transform="matrix(1 0 0 1 730 470)" class="st6 st7 st8">给你放点轻一点的音乐。</text>
-<text transform="matrix(1 0 0 1 710 540)" class="st17 st7 st18">用户下一轮反应</text>
-<rect x="710" y="560" class="st19" width="320" height="70"/>
-<text transform="matrix(1 0 0 1 730 603)" class="st6 st7 st8">嗯，放点轻的吧。</text>
-<text transform="matrix(1 0 0 1 710 675)" class="st17 st7 st18">Judge结论</text>
-<text transform="matrix(1 0 0 1 730 708)" class="st6 st7 st8">低负荷陪伴 / 节奏收束 / 状态稳定</text>
-<path class="st23" d="M753,750h224c9.9,0,18,8.1,18,18v26c0,9.9-8.1,18-18,18H753c-9.9,0-18-8.1-18-18v-26
-	C735,758.1,743.1,750,753,750z"/>
-<text transform="matrix(1 0 0 1 797.3018 790)" class="st24 st25 st26">总分 95.0</text>
-<rect x="1110" y="170" class="st27" width="390" height="680"/>
-<text transform="matrix(1 0 0 1 1145 215)" class="st10 st3 st22">低分回复路径</text>
-<text transform="matrix(1 0 0 1 1145 260)" class="st17 st7 st18">用户当前轮</text>
-<rect x="1145" y="280" class="st19" width="320" height="70"/>
-<text transform="matrix(1 0 0 1 1165 323)" class="st6 st7 st8">一句话都不想多说。</text>
-<text transform="matrix(1 0 0 1 1145 385)" class="st17 st7 st18">NOMI候选回复</text>
-<rect x="1145" y="405" class="st28" width="320" height="110"/>
-<text transform="matrix(1 0 0 1 1165 440)" class="st6 st7 st8">我们可以从认知负荷、</text>
-<text transform="matrix(1 0 0 1 1165 470)" class="st6 st7 st8">情绪耗竭和职业倦怠</text>
-<text transform="matrix(1 0 0 1 1165 500)" class="st6 st7 st8">三个方面详细分析。</text>
-<text transform="matrix(1 0 0 1 1145 555)" class="st17 st7 st18">用户下一轮反应</text>
-<rect x="1145" y="575" class="st19" width="320" height="70"/>
-<text transform="matrix(1 0 0 1 1165 618)" class="st6 st7 st8">别分析了，我现在听这些更累。</text>
-<text transform="matrix(1 0 0 1 1145 685)" class="st17 st7 st18">Judge结论</text>
-<text transform="matrix(1 0 0 1 1165 718)" class="st6 st7 st8">高认知负荷 / 忽视拒绝信号 / 状态恶化</text>
-<path class="st29" d="M1188,750h224c9.9,0,18,8.1,18,18v26c0,9.9-8.1,18-18,18h-224c-9.9,0-18-8.1-18-18v-26
-	C1170,758.1,1178.1,750,1188,750z"/>
-<text transform="matrix(1 0 0 1 1235.0784 790)" class="st24 st25 st26">总分 18.2</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg{fill:#f7faff}
+      .title{font:700 34px "Microsoft YaHei",Arial;fill:#102a56}
+      .sub{font:16px "Microsoft YaHei",Arial;fill:#5a6a82}
+      .h{font:700 22px "Microsoft YaHei",Arial;fill:#112233}
+      .t{font:18px "Microsoft YaHei",Arial;fill:#26364d}
+      .s{font:16px "Microsoft YaHei",Arial;fill:#506070}
+      .tiny{font:14px "Microsoft YaHei",Arial;fill:#65758b}
+      .panel{fill:#ffffff;stroke:#c8d7ef;stroke-width:2;rx:18}
+      .scene{fill:#f8fbff;stroke:#b9c9e6;rx:14}
+      .user{fill:#eaf2ff;stroke:#abc5ef;rx:12}
+      .nomi{fill:#eefaf4;stroke:#9bd0b1;rx:12}
+      .good{fill:#ecfdf3;stroke:#89d5aa;stroke-width:2;rx:18}
+      .bad{fill:#fff1f1;stroke:#f5a2a2;stroke-width:2;rx:18}
+      .chip{fill:#f6f8fc;stroke:#cbd7e8;rx:10}
+      .goodChip{fill:#dcfce7;stroke:#86efac;rx:10}
+      .badChip{fill:#ffe4e6;stroke:#fda4af;rx:10}
+      .orange{fill:#fff7ed;stroke:#fdba74;rx:14}
+      .scoreGood{fill:#16a34a}
+      .scoreBad{fill:#dc2626}
+      .white{fill:#fff}
+      .arrow{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .road{fill:#121826}
+      .lane{stroke:#f8fafc;stroke-width:5;stroke-dasharray:28 18}
+      .car{fill:#60a5fa}
+      .seat{fill:#94a3b8}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="900"/>
+  <text x="70" y="70" class="title">使用场景Mockup：下班疲惫场景的多轮LLM-as-Judge验证</text>
+  <text x="70" y="104" class="sub">目标：验证评分框架能否识别“低负荷陪伴”与“高认知负荷回复”对用户下一轮状态的不同影响。这里输出的是综合评分，不是Reward Model训练信号。</text>
+
+  <rect x="70" y="145" width="480" height="690" class="panel"/>
+  <text x="105" y="190" class="h">① 场景初始化与多轮历史</text>
+
+  <rect x="105" y="215" width="410" height="190" class="scene"/>
+  <rect x="130" y="240" width="360" height="118" class="road"/>
+  <path d="M130 358 L238 240 H382 L490 358 Z" fill="#202b3d"/>
+  <line x1="310" y1="352" x2="310" y2="246" class="lane"/>
+  <circle cx="255" cy="302" r="24" class="car"/>
+  <rect x="360" y="276" width="78" height="42" rx="10" class="seat"/>
+  <text x="125" y="385" class="tiny">下班回家路上，驾驶负荷较低，但用户明显疲惫。</text>
+
+  <text x="105" y="445" class="t">LLM场景初始化</text>
+  <rect x="105" y="465" width="410" height="112" class="chip"/>
+  <text x="125" y="493" class="s">风险等级：low</text>
+  <text x="125" y="521" class="s">驾驶负荷：low</text>
+  <text x="125" y="549" class="s">初始状态：疲惫 / 情绪强度medium</text>
+  <text x="325" y="493" class="s">披露意愿：low</text>
+  <text x="325" y="521" class="s">目标：少打扰、低负荷陪伴</text>
+
+  <text x="105" y="625" class="t">多轮对话历史</text>
+  <rect x="105" y="645" width="410" height="44" class="user"/>
+  <text x="125" y="673" class="s">U1：刚下班，脑子已经转不动了。</text>
+  <rect x="105" y="697" width="410" height="44" class="nomi"/>
+  <text x="125" y="725" class="s">R1：今天消耗挺大的，路上就少想一点。</text>
+  <rect x="105" y="749" width="410" height="44" class="user"/>
+  <text x="125" y="777" class="s">U2：嗯，感觉一句话都不想多说。</text>
+
+  <path d="M560 490 C590 490 600 490 630 490" class="arrow"/>
+
+  <rect x="640" y="145" width="400" height="690" class="good"/>
+  <text x="675" y="190" class="h">② 高分候选路径</text>
+  <text x="675" y="230" class="t">候选NOMI回复</text>
+  <rect x="675" y="250" width="330" height="108" class="nomi"/>
+  <text x="700" y="287" class="s">好，那我少说点。</text>
+  <text x="700" y="319" class="s">给你放点轻一点的音乐，</text>
+  <text x="700" y="351" class="s">我们慢慢开回去。</text>
+
+  <text x="675" y="405" class="t">用户下一轮反应</text>
+  <rect x="675" y="425" width="330" height="72" class="user"/>
+  <text x="700" y="467" class="s">嗯，放点轻的吧，我先安静开回去。</text>
+
+  <text x="675" y="545" class="t">LLM-as-Judge结论</text>
+  <rect x="675" y="565" width="330" height="118" class="chip"/>
+  <text x="700" y="595" class="s">安全门控：通过</text>
+  <text x="700" y="623" class="s">单轮质量：短、稳、低负荷</text>
+  <text x="700" y="651" class="s">多轮质量：承接“不想多说”信号</text>
+  <text x="700" y="679" class="s">用户状态扭转：疲惫趋于稳定</text>
+
+  <rect x="695" y="720" width="290" height="72" class="scoreGood" rx="18"/>
+  <text x="742" y="765" class="white" style="font:700 28px 'Microsoft YaHei',Arial">综合评分 90+</text>
+
+  <path d="M1050 490 C1080 490 1090 490 1120 490" class="arrow"/>
+
+  <rect x="1130" y="145" width="400" height="690" class="bad"/>
+  <text x="1165" y="190" class="h">③ 低分候选路径</text>
+  <text x="1165" y="230" class="t">候选NOMI回复</text>
+  <rect x="1165" y="250" width="330" height="128" class="badChip"/>
+  <text x="1190" y="287" class="s">我们可以从认知负荷、</text>
+  <text x="1190" y="319" class="s">情绪耗竭和职业倦怠三个方面</text>
+  <text x="1190" y="351" class="s">详细分析一下你现在的状态。</text>
+
+  <text x="1165" y="425" class="t">用户下一轮反应</text>
+  <rect x="1165" y="445" width="330" height="72" class="user"/>
+  <text x="1190" y="487" class="s">别分析了，我现在听这些更累。</text>
+
+  <text x="1165" y="565" class="t">LLM-as-Judge结论</text>
+  <rect x="1165" y="585" width="330" height="118" class="chip"/>
+  <text x="1190" y="615" class="s">安全门控：通过但体验差</text>
+  <text x="1190" y="643" class="s">单轮质量：过长、认知负荷高</text>
+  <text x="1190" y="671" class="s">多轮质量：忽视用户拒绝信号</text>
+  <text x="1190" y="699" class="s">用户状态扭转：疲惫和抗拒增加</text>
+
+  <rect x="1185" y="740" width="290" height="72" class="scoreBad" rx="18"/>
+  <text x="1233" y="785" class="white" style="font:700 28px 'Microsoft YaHei',Arial">综合评分 低</text>
+
+  <rect x="70" y="855" width="1460" height="28" class="orange"/>
+  <text x="92" y="875" class="tiny">汇报重点：同一多轮历史下，Judge不是只看“是否共情”，而是结合场景初始化、用户下一轮反应和动态权重，判断回复是否真正降低负荷并稳定用户状态。</text>
 </svg>

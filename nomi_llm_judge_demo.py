@@ -94,7 +94,7 @@ JUDGE_SYSTEM_PROMPT = """你是NOMI车载情感陪伴智能体评分体系的LLM
    - emotion_trajectory_recognition: 多轮情绪轨迹识别。
    - rhythm_control: 多轮节奏控制。
    - persona_consistency: 多轮人格一致性。
-4. 用户状态扭转/延迟奖励预测：
+4. 用户状态扭转评估：
    - cognitive_flexibility: 认知灵活性。
    - attribution_restructuring: 归因重构。
    - perspective_opening: 视角开放。
@@ -494,17 +494,153 @@ def build_judge_messages(
 
 
 def extract_json_object(text: str) -> Dict[str, Any]:
+    candidates = []
+    cleaned = strip_code_fence(text)
+    candidates.append(cleaned)
+    object_text = extract_balanced_json_object(cleaned)
+    if object_text and object_text != cleaned:
+        candidates.append(object_text)
+
+    last_error: Optional[json.JSONDecodeError] = None
+    for candidate in candidates:
+        for repaired in iter_json_repairs(candidate):
+            try:
+                loaded = json.loads(repaired)
+                if isinstance(loaded, dict):
+                    return loaded
+            except json.JSONDecodeError as exc:
+                last_error = exc
+
+    if last_error:
+        raise last_error
+    raise ValueError("No JSON object found in model response.")
+
+
+def strip_code_fence(text: str) -> str:
     text = text.strip()
     if text.startswith("```"):
-        text = re.sub(r"^```(?:json)?", "", text).strip()
-        text = re.sub(r"```$", "", text).strip()
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        match = re.search(r"\{.*\}", text, re.DOTALL)
-        if not match:
-            raise
-        return json.loads(match.group(0))
+        text = re.sub(r"^```(?:json|JSON)?\s*", "", text).strip()
+        text = re.sub(r"\s*```$", "", text).strip()
+    return text
+
+
+def extract_balanced_json_object(text: str) -> Optional[str]:
+    start = text.find("{")
+    if start < 0:
+        return None
+
+    depth = 0
+    in_string = False
+    escaped = False
+    for index in range(start, len(text)):
+        char = text[index]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start : index + 1]
+
+    return text[start:]
+
+
+def iter_json_repairs(text: str) -> List[str]:
+    repairs = []
+    current = text.strip()
+    repairs.append(current)
+
+    # Remove trailing commas before object/array endings.
+    current = re.sub(r",(\s*[}\]])", r"\1", current)
+    repairs.append(current)
+
+    # Add commas between adjacent object fields or array/object items that are
+    # often separated only by a newline in long LLM JSON responses.
+    current = re.sub(r'([}\]"])\s*\n\s*("[-A-Za-z0-9_\u4e00-\u9fff]+\"\s*:)', r"\1,\n\2", current)
+    current = re.sub(r"([}\]])\s*\n\s*([{\[])", r"\1,\n\2", current)
+    repairs.append(current)
+
+    # If the response was truncated after the opening object, close remaining
+    # braces/brackets. This is only a last local repair; normalize_judge_result
+    # can fill missing optional fields after parsing.
+    repairs.append(close_unbalanced_json(current))
+
+    deduped = []
+    seen = set()
+    for item in repairs:
+        if item not in seen:
+            deduped.append(item)
+            seen.add(item)
+    return deduped
+
+
+def close_unbalanced_json(text: str) -> str:
+    stack: List[str] = []
+    in_string = False
+    escaped = False
+    for char in text:
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char in "{[":
+            stack.append(char)
+        elif char == "}" and stack and stack[-1] == "{":
+            stack.pop()
+        elif char == "]" and stack and stack[-1] == "[":
+            stack.pop()
+
+    if in_string:
+        text += '"'
+    closers = {"{": "}", "[": "]"}
+    return text + "".join(closers[item] for item in reversed(stack))
+
+
+def repair_json_with_model(
+    broken_text: str,
+    *,
+    args: argparse.Namespace,
+    api_key: str,
+) -> Dict[str, Any]:
+    repair_messages = [
+        {
+            "role": "system",
+            "content": "你是JSON修复器。只输出合法JSON对象，不要Markdown，不要解释。保留原有字段和值；如果某个字段残缺无法恢复，可以省略该字段。",
+        },
+        {
+            "role": "user",
+            "content": f"请把下面内容修复为合法JSON对象：\n\n{broken_text}",
+        },
+    ]
+    repaired_text = call_chat_ecnu(
+        repair_messages,
+        model=args.judge_model,
+        base_url=args.base_url,
+        temperature=0,
+        max_tokens=max(args.judge_max_tokens, 4096),
+        timeout=args.timeout,
+        api_key=api_key,
+        use_env_proxy=args.use_env_proxy,
+        proxy_url=args.proxy_url,
+        enable_thinking=False,
+    )
+    return extract_json_object(repaired_text)
 
 
 def normalize_judge_result(
@@ -1039,8 +1175,20 @@ def run_demo(args: argparse.Namespace) -> List[Dict[str, Any]]:
                     proxy_url=args.proxy_url,
                     enable_thinking=args.enable_thinking,
                 )
+                try:
+                    judge_payload = extract_json_object(judge_text)
+                except json.JSONDecodeError:
+                    debug_dir = Path(args.out_dir) / "debug"
+                    debug_dir.mkdir(parents=True, exist_ok=True)
+                    debug_path = debug_dir / f"{case['id']}_{variant}_judge_raw.txt"
+                    debug_path.write_text(judge_text, encoding="utf-8")
+                    judge_payload = repair_json_with_model(
+                        judge_text,
+                        args=args,
+                        api_key=api_key or "",
+                    )
                 judge = normalize_judge_result(
-                    extract_json_object(judge_text),
+                    judge_payload,
                     scene_state=scene_state,
                     dialogue_turns=len(case.get("dialogue", [])),
                     has_user_feedback=True,
