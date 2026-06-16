@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg{fill:#f7faff}.title{font:700 34px "Microsoft YaHei",Arial;fill:#102a56}.h{font:700 24px "Microsoft YaHei",Arial;fill:#123}.t{font:18px "Microsoft YaHei",Arial;fill:#26364d}.s{font:16px "Microsoft YaHei",Arial;fill:#5a6a82}.tiny{font:14px "Microsoft YaHei",Arial;fill:#64748b}
+      .panel{fill:white;stroke:#c8d7ef;stroke-width:2;rx:22}.good{fill:#ecfdf3;stroke:#89d5aa;stroke-width:2;rx:18}.bad{fill:#fff1f1;stroke:#f5a2a2;stroke-width:2;rx:18}
+      .screen{fill:#111827;stroke:#334155;stroke-width:2;rx:26}.road{fill:#2f3744}.dash{stroke:#f8fafc;stroke-width:5;stroke-dasharray:30 20}.bubbleu{fill:#eaf2ff;stroke:#abc5ef;rx:18}.bubblen{fill:#eafaf0;stroke:#9bd0b1;rx:18}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text x="70" y="70" class="title">使用场景Mockup：下班疲惫下的多轮高低分验证</text>
+  <text x="70" y="104" class="s">同一多轮对话历史下，比较低负荷陪伴回复与高认知负荷回复对用户下一轮反应和Judge评分的影响。</text>
+
+  <rect x="70" y="140" width="560" height="680" class="panel"/>
+  <text x="105" y="185" class="h">车内对话场景</text>
+  <rect x="105" y="215" width="490" height="250" class="screen"/>
+  <path d="M105 465 L245 215 L455 215 L595 465 Z" class="road"/>
+  <line x1="350" y1="465" x2="350" y2="230" class="dash"/>
+  <circle cx="265" cy="340" r="28" fill="#60a5fa"/>
+  <rect x="410" y="285" width="92" height="48" rx="12" fill="#94a3b8"/>
+  <text x="125" y="505" class="t">场景初始化</text>
+  <text x="130" y="536" class="s">风险等级：low</text>
+  <text x="130" y="564" class="s">驾驶负荷：low</text>
+  <text x="130" y="592" class="s">用户初始状态：疲惫 / medium</text>
+  <text x="130" y="620" class="s">披露意愿：low</text>
+  <text x="125" y="675" class="t">多轮对话历史</text>
+  <rect x="125" y="695" width="440" height="42" class="bubbleu"/>
+  <text x="145" y="722" class="s">U1：刚下班，脑子已经转不动了。</text>
+  <rect x="125" y="743" width="440" height="42" class="bubblen"/>
+  <text x="145" y="770" class="s">R1：今天消耗挺大的，路上少想一点。</text>
+
+  <rect x="675" y="140" width="390" height="680" class="good"/>
+  <text x="710" y="185" class="h">高分回复路径</text>
+  <text x="710" y="230" class="t">用户当前轮</text>
+  <rect x="710" y="250" width="320" height="70" class="bubbleu"/>
+  <text x="730" y="293" class="s">一句话都不想多说。</text>
+  <text x="710" y="355" class="t">NOMI候选回复</text>
+  <rect x="710" y="375" width="320" height="95" class="bubblen"/>
+  <text x="730" y="410" class="s">好，那我少说点。</text>
+  <text x="730" y="440" class="s">给你放点轻一点的音乐。</text>
+  <text x="710" y="510" class="t">用户下一轮反应</text>
+  <rect x="710" y="530" width="320" height="70" class="bubbleu"/>
+  <text x="730" y="573" class="s">嗯，放点轻的吧。</text>
+  <text x="710" y="645" class="t">Judge结论</text>
+  <text x="730" y="678" class="s">低负荷陪伴 / 节奏收束 / 状态稳定</text>
+  <rect x="735" y="720" width="260" height="62" rx="18" fill="#22c55e"/>
+  <text x="775" y="760" font-family="Microsoft YaHei,Arial" font-size="28" font-weight="700" fill="white">总分 95.0</text>
+
+  <rect x="1110" y="140" width="390" height="680" class="bad"/>
+  <text x="1145" y="185" class="h">低分回复路径</text>
+  <text x="1145" y="230" class="t">用户当前轮</text>
+  <rect x="1145" y="250" width="320" height="70" class="bubbleu"/>
+  <text x="1165" y="293" class="s">一句话都不想多说。</text>
+  <text x="1145" y="355" class="t">NOMI候选回复</text>
+  <rect x="1145" y="375" width="320" height="110" fill="#ffe4e6" stroke="#f5a2a2" rx="18"/>
+  <text x="1165" y="410" class="s">我们可以从认知负荷、</text>
+  <text x="1165" y="440" class="s">情绪耗竭和职业倦怠</text>
+  <text x="1165" y="470" class="s">三个方面详细分析。</text>
+  <text x="1145" y="525" class="t">用户下一轮反应</text>
+  <rect x="1145" y="545" width="320" height="70" class="bubbleu"/>
+  <text x="1165" y="588" class="s">别分析了，我现在听这些更累。</text>
+  <text x="1145" y="655" class="t">Judge结论</text>
+  <text x="1165" y="688" class="s">高认知负荷 / 忽视拒绝信号 / 状态恶化</text>
+  <rect x="1170" y="720" width="260" height="62" rx="18" fill="#ef4444"/>
+  <text x="1220" y="760" font-family="Microsoft YaHei,Arial" font-size="28" font-weight="700" fill="white">总分 18.2</text>
+</svg>
